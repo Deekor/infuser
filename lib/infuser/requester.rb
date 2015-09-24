@@ -19,6 +19,7 @@ module Infuser
       retry? ? retrying! : raise(Infuser::Error, 'Call failed and retries exhausted.')
 
       begin
+        binding.pry
         logger.info "CALL: #{service_call} at: #{Time.now} args: #{args.inspect} #{options.api_key}"
         result = client.call(service_call, options.api_key, *args)
         connection(service_call, *args) if result.nil?
