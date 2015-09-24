@@ -25,7 +25,7 @@ module Infuser
     private
 
     def output data
-      # $stdout.puts data
+      $stdout.puts data
     end
 
   end
